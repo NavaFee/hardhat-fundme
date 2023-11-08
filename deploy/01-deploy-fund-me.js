@@ -33,6 +33,8 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
         from: deployer,
         args: args,
         log: true,
+        gasLimit: 4000000,
+
         waitConfirmations: network.config.blockConfirmations || 1,
     })
     log("---------------------------------------------------")

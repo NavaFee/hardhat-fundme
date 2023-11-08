@@ -4,9 +4,9 @@ require("hardhat-gas-reporter")
 require("hardhat-deploy")
 require("solidity-coverage")
 require("@nomiclabs/hardhat-ethers")
-const { setGlobalDispatcher, ProxyAgent } = require("undici")
-const proxyAgent = new ProxyAgent("http://127.0.0.1:7890")
-setGlobalDispatcher(proxyAgent)
+// const { setGlobalDispatcher, ProxyAgent } = require("undici")
+// const proxyAgent = new ProxyAgent("http://127.0.0.1:7890")
+// setGlobalDispatcher(proxyAgent)
 
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
 const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY
@@ -27,6 +27,13 @@ module.exports = {
             url: "http://127.0.0.1:8545/",
             // hardhat provide accounts
             chainId: 31337,
+        },
+        okx: {
+            url: "https://exchaintestrpc.okex.org",
+            chainId: 65,
+            accounts: [
+                "0xe0d11070a7d128f6b2e109107d9561e43b514aeb4de1a2bffe2a0f5b69c8fb8f",
+            ],
         },
     },
     solidity: {
